@@ -3,6 +3,8 @@ import { ArrowRight, Zap } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import animePhoto from "@/assets/adesoji-anime.jpg";
+import realPhoto from "@/assets/adesoji-photo.jpeg";
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
@@ -88,23 +90,37 @@ export default function About() {
               </div>
             </div>
 
-            {/* Image */}
+            {/* Profile Images */}
             <div
-              className={`relative transition-all duration-700 delay-200 ${
+              className={`relative flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
               }`}
             >
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-primary shadow-glow">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-                  alt="Adesoji Adenuga - Creative Director"
-                  className="w-full h-full object-cover mix-blend-overlay opacity-80"
-                />
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-2xl bg-card border border-border p-4 shadow-card">
-                <div className="text-3xl font-bold text-gradient">5+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="relative">
+                {/* Main photo with gradient overlay */}
+                <div className="aspect-[4/5] w-72 sm:w-80 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/20">
+                  <img
+                    src={realPhoto}
+                    alt="Adesoji Adenuga - Creative Director"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                </div>
+                
+                {/* Anime avatar floating card */}
+                <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-2xl overflow-hidden bg-card border-4 border-background shadow-card animate-float">
+                  <img
+                    src={animePhoto}
+                    alt="BigSurge Anime Avatar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Experience badge */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-card border border-border p-3 shadow-card flex flex-col items-center justify-center">
+                  <div className="text-2xl font-bold text-gradient">5+</div>
+                  <div className="text-xs text-muted-foreground text-center">Years Experience</div>
+                </div>
               </div>
             </div>
           </div>
