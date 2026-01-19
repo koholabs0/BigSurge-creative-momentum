@@ -11,6 +11,12 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+        {/* Anime-style grid lines */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" style={{
+          backgroundImage: `linear-gradient(hsl(262, 83%, 58%) 1px, transparent 1px),
+                           linear-gradient(90deg, hsl(262, 83%, 58%) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }} />
       </div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -18,16 +24,21 @@ export function Hero() {
           {/* Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             {/* Badge */}
-            <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+            <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 neon-border">
               <Sparkles className="w-4 h-4" />
               Creative Director & Content Strategist
             </div>
 
-            {/* Name */}
+            {/* Name with Glitch Effect */}
             <h1 className="animate-fade-up-delay-1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6">
               <span className="text-foreground">Adesoji Adenuga</span>
               <br />
-              <span className="text-gradient">(BigSurge ⚡)</span>
+              <span 
+                className="text-gradient glitch inline-block"
+                data-text="(BigSurge ⚡)"
+              >
+                (BigSurge ⚡)
+              </span>
             </h1>
 
             {/* Title */}
@@ -46,7 +57,7 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-primary hover:opacity-90 shadow-glow text-lg px-8 py-6"
+                className="bg-gradient-primary hover:opacity-90 shadow-glow text-lg px-8 py-6 neon-border"
               >
                 <Link to="/contact">
                   Book a Strategy Call
@@ -57,28 +68,38 @@ export function Hero() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-6 border-2"
+                className="text-lg px-8 py-6 border-2 hover:border-primary transition-colors"
               >
                 <Link to="/work">View Selected Work</Link>
               </Button>
             </div>
           </div>
 
-          {/* Profile Images */}
+          {/* Profile Images with Swap Effect */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative animate-fade-up-delay-2">
-              {/* Main real photo */}
-              <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/20">
+              {/* Main photo with swap effect */}
+              <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/30 photo-swap cursor-pointer cyber-corners scanlines">
                 <img
                   src={realPhoto}
                   alt="Adesoji Adenuga"
-                  className="w-full h-full object-cover object-top"
+                  className="photo-real object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                <img
+                  src={animePhoto}
+                  alt="BigSurge Anime"
+                  className="photo-anime"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none z-20" />
+                
+                {/* Hover hint */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-background/80 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity z-30">
+                  Hover to reveal
+                </div>
               </div>
               
-              {/* Anime avatar overlay */}
-              <div className="absolute -bottom-6 -left-6 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-card border-4 border-background bg-card animate-float">
+              {/* Anime avatar floating card with neon border */}
+              <div className="absolute -bottom-6 -left-6 w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-card border-4 border-background bg-card animate-float neon-border">
                 <img
                   src={animePhoto}
                   alt="BigSurge Anime Avatar"
@@ -86,10 +107,15 @@ export function Hero() {
                 />
               </div>
               
-              {/* Decorative badge */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-glow animate-glow-pulse">
+              {/* Decorative badge with glitch */}
+              <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-glow animate-glow-pulse glitch" data-text="Lagos ⚡">
                 Lagos ⚡
               </div>
+              
+              {/* Floating particles */}
+              <div className="absolute top-1/4 -right-8 w-2 h-2 rounded-full bg-primary animate-float" style={{ animationDelay: "0.5s" }} />
+              <div className="absolute bottom-1/3 -left-10 w-3 h-3 rounded-full bg-primary/60 animate-float" style={{ animationDelay: "1.2s" }} />
+              <div className="absolute top-1/2 -right-12 w-1.5 h-1.5 rounded-full bg-primary/40 animate-float" style={{ animationDelay: "0.8s" }} />
             </div>
           </div>
         </div>
@@ -97,8 +123,8 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-muted-foreground/50 rounded-full" />
+        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-2 bg-primary/50 rounded-full" />
         </div>
       </div>
     </section>

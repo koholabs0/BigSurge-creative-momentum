@@ -33,7 +33,7 @@ export default function About() {
             {/* Content */}
             <div>
               <div
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 transition-all duration-700 ${
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 transition-all duration-700 neon-border ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
@@ -46,7 +46,7 @@ export default function About() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
-                Hi, I'm <span className="text-gradient">Adesoji Adenuga</span>
+                Hi, I'm <span className="text-gradient glitch" data-text="Adesoji Adenuga">Adesoji Adenuga</span>
               </h1>
 
               <p
@@ -77,38 +77,43 @@ export default function About() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-gradient-primary hover:opacity-90 shadow-glow"
+                  className="bg-gradient-primary hover:opacity-90 shadow-glow neon-border"
                 >
                   <Link to="/contact">
                     Let's Work Together
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="hover:border-primary transition-colors">
                   <Link to="/work">View My Work</Link>
                 </Button>
               </div>
             </div>
 
-            {/* Profile Images */}
+            {/* Profile Images with Swap Effect */}
             <div
               className={`relative flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
               }`}
             >
               <div className="relative">
-                {/* Main photo with gradient overlay */}
-                <div className="aspect-[4/5] w-72 sm:w-80 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/20">
+                {/* Main photo with swap effect */}
+                <div className="aspect-[4/5] w-72 sm:w-80 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/30 photo-swap cursor-pointer cyber-corners scanlines">
                   <img
                     src={realPhoto}
                     alt="Adesoji Adenuga - Creative Director"
-                    className="w-full h-full object-cover object-top"
+                    className="photo-real object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                  <img
+                    src={animePhoto}
+                    alt="BigSurge Anime"
+                    className="photo-anime"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent pointer-events-none z-20" />
                 </div>
                 
-                {/* Anime avatar floating card */}
-                <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-2xl overflow-hidden bg-card border-4 border-background shadow-card animate-float">
+                {/* Anime avatar floating card with neon border */}
+                <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-2xl overflow-hidden bg-card border-4 border-background shadow-card animate-float neon-border">
                   <img
                     src={animePhoto}
                     alt="BigSurge Anime Avatar"
@@ -116,11 +121,15 @@ export default function About() {
                   />
                 </div>
                 
-                {/* Experience badge */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-card border border-border p-3 shadow-card flex flex-col items-center justify-center">
-                  <div className="text-2xl font-bold text-gradient">5+</div>
+                {/* Experience badge with glitch */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-card border border-border p-3 shadow-card flex flex-col items-center justify-center animate-glow-pulse">
+                  <div className="text-2xl font-bold text-gradient glitch" data-text="5+">5+</div>
                   <div className="text-xs text-muted-foreground text-center">Years Experience</div>
                 </div>
+                
+                {/* Floating particles */}
+                <div className="absolute top-1/4 -right-6 w-2 h-2 rounded-full bg-primary animate-float" style={{ animationDelay: "0.5s" }} />
+                <div className="absolute bottom-1/3 -left-10 w-3 h-3 rounded-full bg-primary/60 animate-float" style={{ animationDelay: "1.2s" }} />
               </div>
             </div>
           </div>

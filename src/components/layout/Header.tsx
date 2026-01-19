@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sun, Moon, Zap } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
+import animeAvatar from "@/assets/adesoji-anime.jpg";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -42,13 +43,29 @@ export function Header() {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Animated Logo with Anime Avatar */}
           <Link
             to="/"
-            className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-3 group"
           >
-            <Zap className="w-6 h-6 text-primary" />
-            <span>BigSurge</span>
+            {/* Anime Avatar Logo */}
+            <div className="relative anime-logo w-10 h-10 rounded-full overflow-hidden border-2 border-primary/50 shadow-glow">
+              <img
+                src={animeAvatar}
+                alt="BigSurge"
+                className="w-full h-full object-cover"
+              />
+              {/* Animated ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-primary animate-ping opacity-20" />
+            </div>
+            
+            {/* Glitch Text Logo */}
+            <span 
+              className="text-xl font-bold text-foreground glitch relative"
+              data-text="BigSurge ⚡"
+            >
+              BigSurge <span className="text-primary">⚡</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,36 +74,42 @@ export function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 relative ${
                   location.pathname === item.href
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 }`}
               >
                 {item.name}
+                {location.pathname === item.href && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary animate-glow-pulse" />
+                )}
               </Link>
             ))}
           </div>
 
           {/* Actions */}
           <div className="flex items-center gap-3">
-            {/* Theme Toggle */}
+            {/* Theme Toggle with Neon Effect */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300"
+              className="relative p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 group"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
+              <div className="relative z-10">
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                ) : (
+                  <Moon className="w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" />
+                )}
+              </div>
+              <div className="absolute inset-0 rounded-lg bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
             </button>
 
-            {/* CTA Button */}
+            {/* CTA Button with Neon Border */}
             <Button
               asChild
-              className="hidden sm:flex bg-gradient-primary hover:opacity-90 shadow-glow animate-glow-pulse"
+              className="hidden sm:flex bg-gradient-primary hover:opacity-90 shadow-glow animate-glow-pulse relative neon-border"
             >
               <Link to="/contact">Book a Strategy Call</Link>
             </Button>
