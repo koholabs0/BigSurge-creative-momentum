@@ -180,6 +180,164 @@
   .magnetic-hover {
     @apply transition-transform duration-200;
   }
+
+  /* Anime-style Neon Border */
+  .neon-border {
+    position: relative;
+  }
+
+  .neon-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(280, 90%, 65%), hsl(320, 80%, 60%), hsl(262, 83%, 58%));
+    background-size: 300% 300%;
+    animation: neonGradient 3s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Glitch Effect */
+  .glitch {
+    position: relative;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-1 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    color: hsl(180, 100%, 50%);
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+
+  .glitch::after {
+    animation: glitch-2 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    color: hsl(330, 100%, 50%);
+    z-index: -2;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+
+  .glitch:hover::before,
+  .glitch:hover::after {
+    animation-duration: 0.1s;
+  }
+
+  /* Anime Logo Animation */
+  .anime-logo {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .anime-logo:hover {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  .anime-logo::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(280, 90%, 65%));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  .anime-logo:hover::after {
+    opacity: 0.6;
+    animation: pulseGlow 1s ease-in-out infinite;
+  }
+
+  /* Photo Swap Effect */
+  .photo-swap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-swap .photo-real,
+  .photo-swap .photo-anime {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .photo-swap .photo-real {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .photo-swap .photo-anime {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  .photo-swap:hover .photo-real {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(4px);
+  }
+
+  .photo-swap:hover .photo-anime {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Scanline Effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsla(0, 0%, 0%, 0.03) 2px,
+      hsla(0, 0%, 0%, 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Cyberpunk Corner Accents */
+  .cyber-corners::before,
+  .cyber-corners::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: hsl(262, 83%, 58%);
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  .cyber-corners::before {
+    top: -2px;
+    left: -2px;
+    border-width: 2px 0 0 2px;
+  }
+
+  .cyber-corners::after {
+    bottom: -2px;
+    right: -2px;
+    border-width: 0 2px 2px 0;
+  }
 }
 
 @keyframes fadeUp {
@@ -221,6 +379,62 @@
   }
   50% {
     box-shadow: 0 0 40px -5px hsl(262, 83%, 58%, 0.6);
+  }
+}
+
+@keyframes neonGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glitch-1 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-1px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(2px);
+  }
+  40% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(1px);
+  }
+  80% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
