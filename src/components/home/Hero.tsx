@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import animePhoto from "@/assets/adesoji-anime.jpg";
-import realPhoto from "@/assets/adesoji-photo.jpeg";
+import animePhoto from "@/assets/adesoji-anime.png";
+import realPhoto from "@/assets/adesoji-photo.png";
 
 const services = [
   { num: "01", label: "Content Strategy" },
@@ -70,12 +70,12 @@ export function Hero() {
                   <img
                     src={realPhoto}
                     alt="Adesoji Adenuga"
-                    className="photo-real object-top"
+                    className="photo-real object-cover object-top"
                   />
                   <img
                     src={animePhoto}
                     alt="BigSurge Anime"
-                    className="photo-anime"
+                    className="photo-anime object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                   
@@ -86,11 +86,11 @@ export function Hero() {
                 </div>
 
                 {/* Floating anime card */}
-                <div className="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shadow-xl border-2 border-white/20 animate-float">
+                <div className="absolute -bottom-4 -left-4 w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden shadow-xl border-2 border-white/20 animate-float bg-white">
                   <img
                     src={animePhoto}
                     alt="BigSurge Avatar"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
 
