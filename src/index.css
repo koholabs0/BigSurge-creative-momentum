@@ -192,7 +192,7 @@
     inset: -2px;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(280, 90%, 65%), hsl(320, 80%, 60%), hsl(262, 83%, 58%));
+    background: linear-gradient(135deg, hsl(45, 93%, 47%), hsl(39, 100%, 50%), hsl(30, 95%, 50%), hsl(45, 93%, 47%));
     background-size: 300% 300%;
     animation: neonGradient 3s ease infinite;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
