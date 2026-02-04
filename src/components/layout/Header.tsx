@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
-import animeAvatar from "@/assets/adesoji-anime.jpg";
+import animeAvatar from "@/assets/adesoji-anime.png";
 
 const navigation = [
   { name: "Home", href: "/" },

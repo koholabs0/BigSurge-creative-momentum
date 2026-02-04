@@ -3,8 +3,8 @@ import { ArrowRight, Zap } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import animePhoto from "@/assets/adesoji-anime.jpg";
-import realPhoto from "@/assets/adesoji-photo.jpeg";
+import animePhoto from "@/assets/adesoji-anime.png";
+import realPhoto from "@/assets/adesoji-photo.png";
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
