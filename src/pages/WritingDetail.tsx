@@ -27,15 +27,26 @@ export default function WritingDetail() {
     async function fetchPost() {
       if (!slug) return;
 
-      const { data } = await supabase
-        .from("blog_posts")
-        .select("*")
-        .eq("slug", slug)
-        .eq("published", true)
-        .maybeSingle();
+      try {
+        const { data, error } = await supabase
+          .from("blog_posts")
+          .select("*")
+          .eq("slug", slug)
+          .eq("published", true)
+          .maybeSingle();
 
-      setPost(data);
-      setLoading(false);
+        if (error) {
+          console.error("Error fetching blog post:", error);
+          setPost(null);
+        } else {
+          setPost(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch blog post:", error);
+        setPost(null);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchPost();
   }, [slug]);

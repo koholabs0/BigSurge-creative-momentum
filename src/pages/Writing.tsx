@@ -16,7 +16,7 @@ interface BlogPost {
 }
 
 const categoryColors: Record<string, string> = {
-  "Creative Strategy": "bg-purple-500/10 text-purple-500",
+  "Creative Strategy": "bg-amber-500/10 text-amber-600",
   "Culture": "bg-blue-500/10 text-blue-500",
   "AI": "bg-green-500/10 text-green-500",
   "African Creator Economy": "bg-orange-500/10 text-orange-500",
@@ -29,13 +29,22 @@ export default function Writing() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const { data } = await supabase
-        .from("blog_posts")
-        .select("id, title, slug, excerpt, category, created_at, cover_image")
-        .eq("published", true)
-        .order("created_at", { ascending: false });
+      try {
+        const { data, error } = await supabase
+          .from("blog_posts")
+          .select("id, title, slug, excerpt, category, created_at, cover_image")
+          .eq("published", true)
+          .order("created_at", { ascending: false });
 
-      if (data) setPosts(data);
+        if (error) {
+          console.error("Error fetching blog posts:", error);
+          return;
+        }
+
+        if (data) setPosts(data);
+      } catch (error) {
+        console.error("Failed to fetch blog posts:", error);
+      }
     }
     fetchPosts();
   }, []);
