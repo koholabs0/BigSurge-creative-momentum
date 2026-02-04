@@ -17,14 +17,25 @@ export function Testimonials() {
 
   useEffect(() => {
     async function fetchTestimonials() {
-      const { data } = await supabase
-        .from("testimonials")
-        .select("*")
-        .eq("featured", true)
-        .order("created_at", { ascending: false })
-        .limit(4);
+      try {
+        const { data, error } = await supabase
+          .from("testimonials")
+          .select("*")
+          .eq("featured", true)
+          .order("created_at", { ascending: false })
+          .limit(4);
 
-      if (data) setTestimonials(data);
+        if (error) {
+          console.error("Error fetching testimonials:", error);
+          return;
+        }
+
+        if (data) {
+          setTestimonials(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch testimonials:", error);
+      }
     }
     fetchTestimonials();
   }, []);
