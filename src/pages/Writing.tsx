@@ -29,13 +29,22 @@ export default function Writing() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const { data } = await supabase
-        .from("blog_posts")
-        .select("id, title, slug, excerpt, category, created_at, cover_image")
-        .eq("published", true)
-        .order("created_at", { ascending: false });
+      try {
+        const { data, error } = await supabase
+          .from("blog_posts")
+          .select("id, title, slug, excerpt, category, created_at, cover_image")
+          .eq("published", true)
+          .order("created_at", { ascending: false });
 
-      if (data) setPosts(data);
+        if (error) {
+          console.error("Error fetching blog posts:", error);
+          return;
+        }
+
+        if (data) setPosts(data);
+      } catch (error) {
+        console.error("Failed to fetch blog posts:", error);
+      }
     }
     fetchPosts();
   }, []);
