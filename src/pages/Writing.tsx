@@ -16,7 +16,7 @@ interface BlogPost {
 }
 
 const categoryColors: Record<string, string> = {
-  "Creative Strategy": "bg-purple-500/10 text-purple-500",
+  "Creative Strategy": "bg-amber-500/10 text-amber-600",
   "Culture": "bg-blue-500/10 text-blue-500",
   "AI": "bg-green-500/10 text-green-500",
   "African Creator Economy": "bg-orange-500/10 text-orange-500",
