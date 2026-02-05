@@ -1,223 +1,238 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Award, Users, Zap, Globe, Sparkles } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import animePhoto from "@/assets/adesoji-anime.png";
 import realPhoto from "@/assets/adesoji-photo.png";
 
+const highlights = [
+  { icon: Award, label: "Award-Winning", value: "Creative Work" },
+  { icon: Users, label: "Trusted By", value: "20+ Brands" },
+  { icon: Zap, label: "Known For", value: "Bold Ideas" },
+  { icon: Globe, label: "Based In", value: "Lagos, Nigeria" },
+];
+
+const journey = [
+  { year: "2019", title: "Started Content Creation", description: "Began my journey as a content creator, learning the fundamentals of storytelling." },
+  { year: "2020", title: "First Major Campaign", description: "Led my first major brand campaign, achieving 200% engagement growth." },
+  { year: "2021", title: "Creative Director Role", description: "Stepped into creative direction, leading teams and shaping brand narratives." },
+  { year: "2022", title: "International Projects", description: "Expanded to work with international brands and global campaigns." },
+  { year: "2023", title: "Event Activations", description: "Launched successful live event productions and activations." },
+  { year: "2024", title: "Scaling Impact", description: "Continuing to push boundaries and create meaningful work." },
+];
+
 export default function About() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
-  const workWith = [
-    "Brands looking to break through the noise",
-    "Creators ready to scale their impact",
-    "Startups building their narrative",
-    "Organizations planning impactful events",
-    "Agencies seeking creative direction",
-  ];
-
-  const howIWork = [
-    { title: "Strategy First", description: "Every project starts with understanding your goals, audience, and constraints." },
-    { title: "Systems Thinking", description: "I build repeatable creative systems, not one-off solutions." },
-    { title: "Culture-Driven", description: "The best creative work is rooted in genuine cultural understanding." },
-    { title: "Results-Focused", description: "Beautiful work means nothing without measurable impact." },
-  ];
-
   return (
     <Layout>
-      {/* Hero */}
-      <section className="py-24 bg-gradient-hero">
-        <div ref={ref} className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <div>
-              <div
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 transition-all duration-700 neon-border ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                <Zap className="w-4 h-4" />
-                About BigSurge
-              </div>
+      <section className="py-16 bg-background min-h-screen">
+        <div className="container mx-auto px-4 sm:px-6">
+          {/* Editorial Hero Card */}
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/90 via-primary/70 to-orange-600/80 mb-12">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/30" />
+            
+            {/* Animated grid lines */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `linear-gradient(white 1px, transparent 1px),
+                               linear-gradient(90deg, white 1px, transparent 1px)`,
+              backgroundSize: '80px 80px'
+            }} />
 
-              <h1
-                className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 transition-all duration-700 delay-100 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                Hi, I'm <span className="text-gradient glitch" data-text="Adesoji Adenuga">Adesoji Adenuga</span>
-              </h1>
+            <div ref={ref} className="relative z-10 py-16 sm:py-20 px-6 sm:px-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Content */}
+                <div className="text-white">
+                  <p
+                    className={`text-white/80 font-medium mb-3 text-sm tracking-wide uppercase transition-all duration-700 ${
+                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
+                  >
+                    About Me
+                  </p>
+                  <h1
+                    className={`text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 transition-all duration-700 ${
+                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
+                  >
+                    The Story
+                    <br />
+                    Behind the Work
+                  </h1>
+                  <p
+                    className={`text-lg text-white/80 leading-relaxed transition-all duration-700 delay-100 ${
+                      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
+                  >
+                    I'm Adesoji Adenuga, a creative director and content strategist based in Lagos, Nigeria. 
+                    I help brands and creators build compelling narratives that connect with audiences.
+                  </p>
+                </div>
 
-              <p
-                className={`text-lg text-muted-foreground mb-6 leading-relaxed transition-all duration-700 delay-200 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                I'm a Lagos-based Creative Director and Content Strategist working at the intersection 
-                of storytelling, strategy, and culture. For over 5 years, I've helped brands and 
-                creators build narratives that resonate and systems that scale.
-              </p>
-
-              <p
-                className={`text-lg text-muted-foreground mb-8 leading-relaxed transition-all duration-700 delay-300 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                My work spans content strategy, digital marketing, video production, and event 
-                activations. I'm passionate about proving that African creativity isn't just 
-                competing on the global stage—it's defining it.
-              </p>
-
-              <div
-                className={`flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-400 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-              >
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-gradient-primary hover:opacity-90 shadow-glow neon-border"
+                {/* Right - Photo with swap effect */}
+                <div
+                  className={`flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 >
-                  <Link to="/contact">
-                    Let's Work Together
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="hover:border-primary transition-colors">
-                  <Link to="/work">View My Work</Link>
-                </Button>
+                  <div className="relative">
+                    <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden shadow-2xl photo-swap cursor-pointer group">
+                      <img
+                        src={realPhoto}
+                        alt="Adesoji Adenuga"
+                        className="photo-real object-cover object-top"
+                      />
+                      <img
+                        src={animePhoto}
+                        alt="BigSurge Anime"
+                        className="photo-anime object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                      
+                      {/* Hover hint */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        ⚡ Hover to reveal
+                      </div>
+                    </div>
+
+                    {/* Floating anime card */}
+                    <div className="absolute -bottom-4 -left-4 w-20 h-20 rounded-xl overflow-hidden shadow-xl border-2 border-white/20 animate-float bg-white">
+                      <img
+                        src={animePhoto}
+                        alt="BigSurge Avatar"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+
+                    {/* Badge */}
+                    <div className="absolute -top-3 -right-3 px-4 py-2 rounded-full bg-orange-500 text-white text-sm font-bold shadow-lg">
+                      BigSurge ⚡
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Profile Images with Swap Effect */}
-            <div
-              className={`relative flex justify-center lg:justify-end transition-all duration-700 delay-200 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-              }`}
-            >
-              <div className="relative">
-                {/* Main photo with swap effect */}
-                <div className="aspect-[4/5] w-72 sm:w-80 rounded-2xl overflow-hidden shadow-glow border-2 border-primary/30 photo-swap cursor-pointer cyber-corners scanlines">
-                  <img
-                    src={realPhoto}
-                    alt="Adesoji Adenuga - Creative Director"
-                    className="photo-real object-top"
-                  />
-                  <img
-                    src={animePhoto}
-                    alt="BigSurge Anime"
-                    className="photo-anime"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent pointer-events-none z-20" />
-                </div>
-                
-                {/* Anime avatar floating card with neon border */}
-                <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-2xl overflow-hidden bg-card border-4 border-background shadow-card animate-float neon-border">
-                  <img
-                    src={animePhoto}
-                    alt="BigSurge Anime Avatar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* Experience badge with glitch */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl bg-card border border-border p-3 shadow-card flex flex-col items-center justify-center animate-glow-pulse">
-                  <div className="text-2xl font-bold text-gradient glitch" data-text="5+">5+</div>
-                  <div className="text-xs text-muted-foreground text-center">Years Experience</div>
-                </div>
-                
-                {/* Floating particles */}
-                <div className="absolute top-1/4 -right-6 w-2 h-2 rounded-full bg-primary animate-float" style={{ animationDelay: "0.5s" }} />
-                <div className="absolute bottom-1/3 -left-10 w-3 h-3 rounded-full bg-primary/60 animate-float" style={{ animationDelay: "1.2s" }} />
-              </div>
-            </div>
+            {/* Curved bottom edge */}
+            <div className="absolute bottom-0 left-0 right-0 h-6 bg-background" style={{
+              borderTopLeftRadius: '1.5rem',
+              borderTopRightRadius: '1.5rem',
+            }} />
           </div>
-        </div>
-      </section>
 
-      {/* How I Work */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 text-center">
-            How I Work
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {howIWork.map((item, index) => (
+          {/* Highlights Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {highlights.map((item, index) => (
               <div
-                key={item.title}
-                className="p-6 rounded-2xl bg-card border border-border hover-lift"
+                key={item.label}
+                className={`p-6 rounded-2xl bg-card border border-border text-center transition-all duration-700 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${(index + 3) * 100}ms` }}
               >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold mb-4">
-                  {index + 1}
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
+                <div className="font-bold text-foreground">{item.value}</div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Who I Work With */}
-      <section className="py-24 bg-card border-y border-border">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Bio Section */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Who I Work With
+              <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">My Approach</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-[1.1] mb-6">
+                Creating Work That
+                <br />
+                <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
+                  Actually Matters
+                </span>
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                I partner with ambitious teams and individuals who believe in the power 
-                of creative excellence to drive real results.
-              </p>
-              <ul className="space-y-4">
-                {workWith.map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square rounded-2xl bg-muted flex items-center justify-center">
-                <span className="text-6xl">🎯</span>
-              </div>
-              <div className="aspect-square rounded-2xl bg-muted flex items-center justify-center mt-8">
-                <span className="text-6xl">🚀</span>
-              </div>
-              <div className="aspect-square rounded-2xl bg-muted flex items-center justify-center -mt-8">
-                <span className="text-6xl">💡</span>
-              </div>
-              <div className="aspect-square rounded-2xl bg-muted flex items-center justify-center">
-                <span className="text-6xl">⚡</span>
-              </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                With over 5 years of experience in content strategy and creative direction, 
+                I've had the privilege of working with some of the most exciting brands and 
+                creators in Nigeria and beyond.
+              </p>
+              <p>
+                My approach is simple: understand the story you want to tell, identify who 
+                needs to hear it, and craft experiences that make them feel something. 
+                Great content should feel effortless to consume but powerful in its impact.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Create Something Amazing?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-            Whether you have a clear vision or just a spark of an idea, 
-            I'd love to hear from you.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-primary hover:opacity-90 shadow-glow animate-glow-pulse"
-          >
-            <Link to="/contact">
-              Book a Strategy Call
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </Button>
+          {/* Journey Timeline */}
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90 mb-16">
+            {/* Animated grid overlay */}
+            <div className="absolute inset-0 opacity-[0.02]" style={{
+              backgroundImage: `linear-gradient(hsl(var(--background)) 1px, transparent 1px),
+                               linear-gradient(90deg, hsl(var(--background)) 1px, transparent 1px)`,
+              backgroundSize: '60px 60px'
+            }} />
+
+            <div className="relative z-10 py-16 px-6 sm:px-12">
+              <div className="text-center mb-12">
+                <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">The Journey</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-background">
+                  How I Got Here
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {journey.map((item) => (
+                  <div
+                    key={item.year}
+                    className="p-6 rounded-2xl bg-background/5 backdrop-blur-sm border border-background/10 hover:bg-background/10 transition-all"
+                  >
+                    <span className="text-2xl font-bold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+                      {item.year}
+                    </span>
+                    <h3 className="text-lg font-semibold text-background mt-2 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-background/70 text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Curved edges */}
+            <div className="absolute top-0 left-0 right-0 h-6 bg-background" style={{
+              borderBottomLeftRadius: '1.5rem',
+              borderBottomRightRadius: '1.5rem',
+            }} />
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-orange-500 mb-6">
+              <Sparkles className="w-7 h-7 text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              Ready to Create Something Amazing?
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+              I'm always excited to work on new projects and collaborate with passionate people.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-primary to-orange-500 hover:opacity-90 rounded-full text-base px-8 py-6 font-medium group"
+            >
+              <Link to="/contact">
+                Let's Connect
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>
