@@ -7,6 +7,39 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    title: "Website Development & Design",
+    description: "Custom websites that combine stunning visuals with seamless functionality. From portfolio sites to full-scale web applications, I build digital experiences that convert.",
+    features: [
+      "Custom responsive design",
+      "Modern UI/UX implementation",
+      "Performance optimization",
+      "SEO-ready architecture",
+    ],
+    icon: "code",
+  },
+  {
+    title: "Social Media Integration",
+    description: "Seamlessly embed your social presence into your digital ecosystem. Instagram feeds, LinkedIn highlights, and cross-platform content that drives engagement.",
+    features: [
+      "Instagram & LinkedIn embedding",
+      "Social proof displays",
+      "Content feed integration",
+      "Cross-platform strategy",
+    ],
+    icon: "share-2",
+  },
+  {
+    title: "Demo Video Production",
+    description: "Showcase your projects with high-impact demo videos. From product walkthroughs to portfolio reels, I create content that captures attention and tells your story.",
+    features: [
+      "Project showcase videos",
+      "Explainer & tutorial content",
+      "Portfolio reels",
+      "Social-ready edits",
+    ],
+    icon: "video",
+  },
+  {
     title: "Strategic Creative Direction",
     description: "Transform your brand vision into a cohesive creative strategy that resonates with your audience and drives measurable results.",
     features: [

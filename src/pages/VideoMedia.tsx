@@ -3,6 +3,7 @@ import { Play, X } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { InstagramFeed } from "@/components/social/InstagramFeed";
 
 const videos = {
   shortForm: [
@@ -150,13 +151,19 @@ export default function VideoMedia() {
           </div>
 
           {/* Events Section */}
-          <div>
+          <div className="mb-20">
             <h2 className="text-2xl font-bold text-foreground mb-8">Event Coverage</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {videos.events.map((video) => (
                 <VideoCard key={video.id} video={video} onClick={() => setSelectedVideo(video)} />
               ))}
             </div>
+          </div>
+
+          {/* Instagram Reels Section */}
+          <div className="mb-20">
+            <h2 className="text-2xl font-bold text-foreground mb-8">Instagram Reels</h2>
+            <InstagramFeed category="campaign" limit={6} showHeader={true} />
           </div>
         </div>
       </section>
