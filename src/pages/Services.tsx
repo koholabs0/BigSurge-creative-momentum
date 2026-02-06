@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Compass, Target, TrendingUp, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Compass, Target, TrendingUp, Calendar, Sparkles, Code, Share2, Video } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
@@ -10,6 +10,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   target: Target,
   "trending-up": TrendingUp,
   calendar: Calendar,
+  code: Code,
+  "share-2": Share2,
+  video: Video,
 };
 
 export default function Services() {

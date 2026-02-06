@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Users, Zap, Globe, Sparkles } from "lucide-react";
+import { ArrowRight, Award, Users, Zap, Globe, Sparkles, Linkedin } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { LinkedInCard } from "@/components/social/LinkedInCard";
+import { linkedInContent, socialProfiles } from "@/data/socialMedia";
 import animePhoto from "@/assets/adesoji-anime.png";
 import realPhoto from "@/assets/adesoji-photo.png";
 
@@ -164,6 +166,40 @@ export default function About() {
                 needs to hear it, and craft experiences that make them feel something. 
                 Great content should feel effortless to consume but powerful in its impact.
               </p>
+            </div>
+          </div>
+
+          {/* LinkedIn Professional Highlights */}
+          <div className="mb-16">
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#0077B5] flex items-center justify-center">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-foreground">Professional Highlights</h3>
+                  <p className="text-sm text-muted-foreground">Connect on LinkedIn</p>
+                </div>
+              </div>
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-[#0077B5] text-[#0077B5] hover:bg-[#0077B5] hover:text-white"
+              >
+                <a 
+                  href={socialProfiles.find(p => p.platform === "LinkedIn")?.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Connect
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {linkedInContent.map((content) => (
+                <LinkedInCard key={content.id} content={content} />
+              ))}
             </div>
           </div>
 
