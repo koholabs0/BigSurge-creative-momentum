@@ -74,8 +74,11 @@ export default function Contact() {
   ];
 
   const socials = [
-    { icon: Instagram, label: "Instagram", href: "https://instagram.com/BigSurge__" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/adesojiadenuga" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/Bigsurge__" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/adesoji-adenuga-041531123/" },
+    { icon: Facebook, label: "Facebook", href: "https://web.facebook.com/joel.adenuga.7/" },
+    { icon: Twitter, label: "X (Twitter)", href: "https://x.com/Bigsurge__" },
+    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/2347025055416" },
   ];
 
   return (
