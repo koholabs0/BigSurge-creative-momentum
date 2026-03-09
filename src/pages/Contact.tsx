@@ -28,23 +28,25 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
+    // Client-side validation
+    const validation = contactSchema.safeParse({ name, email, message });
+    if (!validation.success) {
+      const firstError = Object.values(validation.error.flatten().fieldErrors)[0]?.[0];
+      toast({
+        title: "Validation Error",
+        description: firstError || "Please check your input.",
+        variant: "destructive",
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("contact_submissions")
-        .insert([{ name, email, message }]);
+      const { data, error } = await supabase.functions.invoke("submit-contact", {
+        body: { name: validation.data.name, email: validation.data.email, message: validation.data.message },
+      });
 
-      if (dbError) throw dbError;
-
-      // Try to send email notification
-      try {
-        await supabase.functions.invoke("send-contact-email", {
-          body: { name, email, message },
-        });
-      } catch (emailError) {
-        // Email sending is optional, don't fail the whole submission
-        console.log("Email notification skipped:", emailError);
-      }
+      if (error) throw error;
 
       toast({
         title: "Message sent!",
