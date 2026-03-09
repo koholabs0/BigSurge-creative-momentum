@@ -27,21 +27,27 @@ export interface LinkedInContent {
 export const socialProfiles: SocialProfile[] = [
   {
     platform: "Instagram",
-    handle: "@BigSurge__",
-    url: "https://instagram.com/BigSurge__",
+    handle: "@Bigsurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     icon: "instagram",
   },
   {
     platform: "LinkedIn",
     handle: "Adesoji Adenuga",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
     icon: "linkedin",
   },
   {
     platform: "Twitter",
-    handle: "@BigSurge__",
-    url: "https://twitter.com/BigSurge__",
+    handle: "@Bigsurge__",
+    url: "https://x.com/Bigsurge__",
     icon: "twitter",
+  },
+  {
+    platform: "Facebook",
+    handle: "Joel Adenuga",
+    url: "https://web.facebook.com/joel.adenuga.7/",
+    icon: "facebook",
   },
 ];
 
@@ -51,7 +57,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "reel",
     thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80",
     caption: "Behind the scenes of our latest brand campaign shoot 🎬",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "behind-the-scenes",
     featured: true,
   },
@@ -60,7 +66,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "post",
     thumbnail: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
     caption: "SOSSA Connects 2024 - What an incredible night of creativity and connection ✨",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "event",
     featured: true,
   },
@@ -69,7 +75,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "reel",
     thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
     caption: "New campaign launch for emerging tech brand 🚀",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "campaign",
     featured: true,
   },
@@ -78,7 +84,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "carousel",
     thumbnail: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&q=80",
     caption: "Event highlights from last week's brand activation 🎉",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "event",
   },
   {
@@ -86,7 +92,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "reel",
     thumbnail: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
     caption: "The creative process behind our latest project 🎨",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "project",
   },
   {
@@ -94,7 +100,7 @@ export const instagramPosts: InstagramPost[] = [
     type: "post",
     thumbnail: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80",
     caption: "Strategy session with the team - big things coming soon 💡",
-    url: "https://instagram.com/BigSurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     category: "behind-the-scenes",
   },
 ];
@@ -105,7 +111,7 @@ export const linkedInContent: LinkedInContent[] = [
     type: "achievement",
     title: "Creative Director Recognition",
     excerpt: "Honored to be recognized for creative leadership in the marketing space.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
     date: "2024",
   },
   {
@@ -113,13 +119,13 @@ export const linkedInContent: LinkedInContent[] = [
     type: "article",
     title: "The Future of Brand Storytelling",
     excerpt: "How authentic narratives drive engagement in the digital age.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
   },
   {
     id: "li-3",
     type: "post",
     title: "Building Creative Communities",
     excerpt: "Reflections on fostering collaboration and innovation in creative spaces.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
   },
 ];
