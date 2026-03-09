@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Send, Mail, MapPin, Instagram, Linkedin, Sparkles, ArrowRight } from "lucide-react";
+import { Send, Mail, MapPin, Instagram, Linkedin, Sparkles, ArrowRight, Facebook, Twitter, MessageCircle } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

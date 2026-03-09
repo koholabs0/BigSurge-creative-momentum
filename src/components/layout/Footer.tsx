@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, Mail, Instagram, Linkedin } from "lucide-react";
+import { Zap, Mail, Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 
 const navigation = {
   main: [
@@ -15,22 +15,23 @@ const navigation = {
   social: [
     {
       name: "Instagram",
-      href: "https://instagram.com/BigSurge__",
+      href: "https://www.instagram.com/Bigsurge__",
       icon: Instagram,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/adesojiadenuga",
+      href: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
       icon: Linkedin,
     },
     {
-      name: "Medium",
-      href: "https://medium.com/@bigsurge",
-      icon: () => (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-        </svg>
-      ),
+      name: "Facebook",
+      href: "https://web.facebook.com/joel.adenuga.7/",
+      icon: Facebook,
+    },
+    {
+      name: "X (Twitter)",
+      href: "https://x.com/Bigsurge__",
+      icon: Twitter,
     },
   ],
 };

@@ -27,21 +27,27 @@ export interface LinkedInContent {
 export const socialProfiles: SocialProfile[] = [
   {
     platform: "Instagram",
-    handle: "@BigSurge__",
-    url: "https://instagram.com/BigSurge__",
+    handle: "@Bigsurge__",
+    url: "https://www.instagram.com/Bigsurge__",
     icon: "instagram",
   },
   {
     platform: "LinkedIn",
     handle: "Adesoji Adenuga",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
     icon: "linkedin",
   },
   {
     platform: "Twitter",
-    handle: "@BigSurge__",
-    url: "https://twitter.com/BigSurge__",
+    handle: "@Bigsurge__",
+    url: "https://x.com/Bigsurge__",
     icon: "twitter",
+  },
+  {
+    platform: "Facebook",
+    handle: "Joel Adenuga",
+    url: "https://web.facebook.com/joel.adenuga.7/",
+    icon: "facebook",
   },
 ];
 
