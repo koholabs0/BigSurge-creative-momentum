@@ -111,7 +111,7 @@ export const linkedInContent: LinkedInContent[] = [
     type: "achievement",
     title: "Creative Director Recognition",
     excerpt: "Honored to be recognized for creative leadership in the marketing space.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
     date: "2024",
   },
   {
@@ -119,13 +119,13 @@ export const linkedInContent: LinkedInContent[] = [
     type: "article",
     title: "The Future of Brand Storytelling",
     excerpt: "How authentic narratives drive engagement in the digital age.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
   },
   {
     id: "li-3",
     type: "post",
     title: "Building Creative Communities",
     excerpt: "Reflections on fostering collaboration and innovation in creative spaces.",
-    url: "https://linkedin.com/in/adesojiadenuga",
+    url: "https://www.linkedin.com/in/adesoji-adenuga-041531123/",
   },
 ];
