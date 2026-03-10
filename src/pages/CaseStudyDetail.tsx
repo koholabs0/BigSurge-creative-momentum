@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Instagram } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { ImageGallery } from "@/components/ImageGallery";
 import { projects } from "@/data/projects";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
