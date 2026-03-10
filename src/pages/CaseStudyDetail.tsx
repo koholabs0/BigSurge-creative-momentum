@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Instagram } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
@@ -76,6 +76,20 @@ export default function CaseStudyDetail() {
           >
             {project.summary}
           </p>
+
+          {project.instagramLink && (
+            <a
+              href={project.instagramLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 mt-6 text-primary hover:text-primary/80 transition-all duration-700 delay-[400ms] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <Instagram className="w-5 h-5" />
+              View on Instagram
+            </a>
+          )}
         </div>
       </section>
 
@@ -96,7 +110,7 @@ export default function CaseStudyDetail() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
-            {sections.map((section, index) => (
+            {sections.map((section) => (
               <div key={section.title} className="mb-16 last:mb-0">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
                   {section.title}
@@ -109,6 +123,31 @@ export default function CaseStudyDetail() {
           </div>
         </div>
       </section>
+
+      {/* Gallery */}
+      {project.galleryImages && project.galleryImages.length > 0 && (
+        <section className="py-16 bg-card border-t border-border">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-foreground mb-10 text-center">
+              Project Gallery
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {project.galleryImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl overflow-hidden shadow-card border border-border"
+                >
+                  <img
+                    src={img}
+                    alt={`${project.title} — Gallery ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-16 bg-card border-t border-border">
