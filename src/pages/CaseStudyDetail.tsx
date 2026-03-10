@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Instagram } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { ImageGallery } from "@/components/ImageGallery";
 import { projects } from "@/data/projects";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -131,20 +132,7 @@ export default function CaseStudyDetail() {
             <h2 className="text-3xl font-bold text-foreground mb-10 text-center">
               Project Gallery
             </h2>
-            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {project.galleryImages.map((img, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl overflow-hidden shadow-card border border-border"
-                >
-                  <img
-                    src={img}
-                    alt={`${project.title} — Gallery ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <ImageGallery images={project.galleryImages} alt={project.title} />
           </div>
         </section>
       )}
