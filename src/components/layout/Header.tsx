@@ -125,34 +125,35 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ${
-            isOpen ? "max-h-screen opacity-100 mt-4" : "max-h-0 opacity-0"
-          }`}
-        >
-          <div className="flex flex-col gap-2 py-4 border-t border-border">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
-                  location.pathname === item.href
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
+        {/* Mobile Navigation — Full-screen overlay */}
+        {isOpen && (
+          <div className="lg:hidden fixed inset-0 top-0 left-0 z-40 bg-background/95 backdrop-blur-xl animate-fade-in">
+            <div className="flex flex-col items-center justify-center h-full gap-3 px-8">
+              {navigation.map((item, i) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  style={{ animationDelay: `${i * 60}ms` }}
+                  className={`animate-fade-in opacity-0 fill-mode-forwards px-6 py-3 text-2xl font-semibold rounded-xl transition-colors duration-300 ${
+                    location.pathname === item.href
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:text-primary hover:bg-primary/5"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Button
+                asChild
+                size="lg"
+                className="mt-6 animate-fade-in opacity-0 fill-mode-forwards bg-gradient-primary hover:opacity-90 shadow-glow text-lg px-8"
+                style={{ animationDelay: `${navigation.length * 60}ms` }}
               >
-                {item.name}
-              </Link>
-            ))}
-            <Button
-              asChild
-              className="mt-4 bg-gradient-primary hover:opacity-90 shadow-glow"
-            >
-              <Link to="/contact">Book a Strategy Call</Link>
-            </Button>
+                <Link to="/contact">Book a Strategy Call</Link>
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </header>
   );
