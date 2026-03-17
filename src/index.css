@@ -455,3 +455,8 @@
     transform: translateY(0) rotateX(0);
   }
 }
+
+/* Animation fill mode utility */
+.fill-mode-forwards {
+  animation-fill-mode: forwards;
+}
