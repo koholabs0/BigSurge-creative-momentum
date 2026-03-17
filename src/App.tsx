@@ -17,6 +17,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <CustomCursor />
           <AnimatedRoutes />
         </BrowserRouter>
