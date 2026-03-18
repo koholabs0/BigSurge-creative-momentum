@@ -33,7 +33,7 @@ export function CTASection() {
               </div>
 
               {/* Heading */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-background mb-4 sm:mb-6 leading-tight">
                 Ready to Start a Project?
               </h2>
 

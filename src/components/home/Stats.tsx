@@ -50,7 +50,7 @@ export function Stats() {
                   {/* Accent line */}
                   <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-gradient-to-r ${stat.accent}`} />
                   
-                  <div className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
+                  <div className={`text-3xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
                     {stat.value}
                   </div>
                   <div className="text-sm sm:text-base text-background/70 font-medium">

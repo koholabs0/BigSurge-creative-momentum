@@ -17,7 +17,7 @@ export function Philosophy() {
             }`}
           >
             <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">Philosophy</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-8">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6 sm:mb-8">
               Creative Work Should{" "}
               <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
                 Move People

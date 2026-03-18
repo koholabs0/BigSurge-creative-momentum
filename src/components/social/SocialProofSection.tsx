@@ -45,7 +45,7 @@ export function SocialProofSection() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Instagram Featured Posts */}
           <div className="lg:col-span-2 space-y-6">
             <div

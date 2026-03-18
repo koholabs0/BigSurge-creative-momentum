@@ -78,7 +78,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Quote Text */}
-                  <blockquote className="text-lg text-white mb-6 leading-relaxed pt-2">
+                  <blockquote className="text-base sm:text-lg text-white mb-4 sm:mb-6 leading-relaxed pt-2">
                     "{testimonial.quote}"
                   </blockquote>
 

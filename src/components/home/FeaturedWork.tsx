@@ -19,7 +19,7 @@ export function FeaturedWork() {
         >
           <div>
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">Portfolio</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]">
               Selected Work
             </h2>
           </div>

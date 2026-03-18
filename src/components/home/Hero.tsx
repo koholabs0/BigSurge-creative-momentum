@@ -157,11 +157,11 @@ export function Hero() {
       </div>
 
       {/* Behind the Designs Section */}
-      <div className="container mx-auto px-6 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto px-4 sm:px-6 py-12 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
-            <p className="text-primary font-medium mb-4">Behind the Designs</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
+            <p className="text-primary font-medium mb-3 sm:mb-4">Behind the Designs</p>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
               Shaping Experiences That Make Life Simpler
             </h2>
           </div>
