@@ -9,7 +9,7 @@ export function FeaturedWork() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-background">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div
