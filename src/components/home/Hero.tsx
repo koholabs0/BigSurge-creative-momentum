@@ -137,8 +137,8 @@ export function Hero() {
       </div>
 
       {/* Brands Strip */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           <p className="text-muted-foreground text-sm">
             Trusted by Brands I've<br className="sm:hidden" /> Helped Shape
           </p>
