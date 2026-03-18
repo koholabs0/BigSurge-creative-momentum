@@ -52,7 +52,7 @@ export function Hero() {
               </h1>
 
               {/* Services Grid */}
-              <div className="animate-fade-up-delay-2 grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
+              <div className="animate-fade-up-delay-2 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-12">
                 {services.map((service, index) => (
                   <div key={index} className="group">
                     <span className="text-orange-400 font-mono text-sm">#{service.num}</span>
