@@ -30,7 +30,7 @@ export function Stats() {
               }`}
             >
               <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">The Numbers</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-background">
                 Results That Speak
               </h2>
             </div>
