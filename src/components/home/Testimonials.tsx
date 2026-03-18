@@ -32,7 +32,7 @@ export function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="py-10 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Editorial Card Container */}
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/90 via-primary/70 to-orange-600/80">
