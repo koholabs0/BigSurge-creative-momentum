@@ -15,10 +15,10 @@ export function SocialProofSection() {
   const linkedinProfile = socialProfiles.find(p => p.platform === "LinkedIn");
 
   return (
-    <section ref={ref} className="py-24 bg-muted/30">
+    <section ref={ref} className="py-12 sm:py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <div
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -45,7 +45,7 @@ export function SocialProofSection() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Instagram Featured Posts */}
           <div className="lg:col-span-2 space-y-6">
             <div

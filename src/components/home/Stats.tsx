@@ -11,7 +11,7 @@ export function Stats() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="py-10 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Editorial Stats Card */}
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90">
@@ -22,7 +22,7 @@ export function Stats() {
             backgroundSize: '60px 60px'
           }} />
 
-          <div className="relative z-10 py-16 sm:py-20 px-6 sm:px-12">
+          <div className="relative z-10 py-10 sm:py-20 px-4 sm:px-12">
             {/* Section Header */}
             <div
               className={`text-center mb-12 transition-all duration-700 ${
@@ -30,7 +30,7 @@ export function Stats() {
               }`}
             >
               <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">The Numbers</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-background">
                 Results That Speak
               </h2>
             </div>
@@ -50,7 +50,7 @@ export function Stats() {
                   {/* Accent line */}
                   <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-gradient-to-r ${stat.accent}`} />
                   
-                  <div className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
+                  <div className={`text-3xl sm:text-5xl lg:text-6xl font-bold mb-2 bg-gradient-to-r ${stat.accent} bg-clip-text text-transparent`}>
                     {stat.value}
                   </div>
                   <div className="text-sm sm:text-base text-background/70 font-medium">

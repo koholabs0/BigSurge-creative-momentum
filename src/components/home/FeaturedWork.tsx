@@ -9,17 +9,17 @@ export function FeaturedWork() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-background">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div
-          className={`grid lg:grid-cols-2 gap-8 items-end mb-16 transition-all duration-700 ${
+          className={`grid lg:grid-cols-2 gap-6 sm:gap-8 items-end mb-10 sm:mb-16 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <div>
             <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">Portfolio</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1]">
               Selected Work
             </h2>
           </div>

@@ -32,7 +32,7 @@ export function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="py-10 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Editorial Card Container */}
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/90 via-primary/70 to-orange-600/80">
@@ -46,15 +46,15 @@ export function Testimonials() {
             backgroundSize: '80px 80px'
           }} />
 
-          <div className="relative z-10 py-16 sm:py-20 px-6 sm:px-12">
+          <div className="relative z-10 py-10 sm:py-20 px-4 sm:px-12">
             {/* Header */}
             <div
-              className={`text-center mb-16 transition-all duration-700 ${
+              className={`text-center mb-10 sm:mb-16 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <p className="text-white/80 font-medium mb-3 text-sm tracking-wide uppercase">Testimonials</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
                 What Clients Say
               </h2>
               <p className="text-lg text-white/70 max-w-xl mx-auto">
@@ -67,7 +67,7 @@ export function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
-                  className={`relative p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-500 ${
+                  className={`relative p-5 sm:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                   }`}
                   style={{ transitionDelay: `${(index + 1) * 100}ms` }}
@@ -78,7 +78,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Quote Text */}
-                  <blockquote className="text-lg text-white mb-6 leading-relaxed pt-2">
+                  <blockquote className="text-base sm:text-lg text-white mb-4 sm:mb-6 leading-relaxed pt-2">
                     "{testimonial.quote}"
                   </blockquote>
 

@@ -7,7 +7,7 @@ export function CTASection() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="py-10 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Editorial CTA Card */}
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90">
@@ -21,7 +21,7 @@ export function CTASection() {
           {/* Gradient orb */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-primary/30 via-orange-500/20 to-amber-500/30 rounded-full blur-3xl" />
 
-          <div className="relative z-10 py-20 sm:py-28 px-6 sm:px-12">
+          <div className="relative z-10 py-12 sm:py-28 px-4 sm:px-12">
             <div
               className={`max-w-3xl mx-auto text-center transition-all duration-700 ${
                 isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
@@ -33,7 +33,7 @@ export function CTASection() {
               </div>
 
               {/* Heading */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-background mb-4 sm:mb-6 leading-tight">
                 Ready to Start a Project?
               </h2>
 

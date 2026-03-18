@@ -22,7 +22,7 @@ const brands = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-background overflow-hidden">
+    <section className="relative min-h-[80vh] sm:min-h-screen bg-background overflow-hidden">
       {/* Main Hero Card */}
       <div className="relative mx-4 sm:mx-6 lg:mx-8 mt-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/90 via-primary/70 to-orange-600/80">
         {/* Background gradient overlay */}
@@ -35,8 +35,8 @@ export function Hero() {
           backgroundSize: '80px 80px'
         }} />
 
-        <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
+        <div className="relative z-10 container mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[50vh] sm:min-h-[70vh]">
             {/* Left Content */}
             <div className="text-white order-2 lg:order-1">
               {/* Intro text */}
@@ -45,14 +45,14 @@ export function Hero() {
               </p>
 
               {/* Main Title */}
-              <h1 className="animate-fade-up-delay-1 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-8">
+              <h1 className="animate-fade-up-delay-1 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-6 sm:mb-8">
                 Creative
                 <br />
                 Director
               </h1>
 
               {/* Services Grid */}
-              <div className="animate-fade-up-delay-2 grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12">
+              <div className="animate-fade-up-delay-2 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-12">
                 {services.map((service, index) => (
                   <div key={index} className="group">
                     <span className="text-orange-400 font-mono text-sm">#{service.num}</span>
@@ -68,7 +68,7 @@ export function Hero() {
             <div className="order-1 lg:order-2 flex flex-col items-center lg:items-end gap-8">
               {/* Profile Photo with Swap Effect */}
               <div className="relative animate-fade-up-delay-1">
-                <div className="relative w-64 h-80 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl photo-swap cursor-pointer group">
+                <div className="relative w-48 h-60 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl photo-swap cursor-pointer group">
                   <img
                     src={realPhoto}
                     alt="Adesoji Adenuga"
@@ -137,8 +137,8 @@ export function Hero() {
       </div>
 
       {/* Brands Strip */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           <p className="text-muted-foreground text-sm">
             Trusted by Brands I've<br className="sm:hidden" /> Helped Shape
           </p>
@@ -157,11 +157,11 @@ export function Hero() {
       </div>
 
       {/* Behind the Designs Section */}
-      <div className="container mx-auto px-6 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto px-4 sm:px-6 py-12 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
-            <p className="text-primary font-medium mb-4">Behind the Designs</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
+            <p className="text-primary font-medium mb-3 sm:mb-4">Behind the Designs</p>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
               Shaping Experiences That Make Life Simpler
             </h2>
           </div>

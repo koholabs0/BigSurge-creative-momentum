@@ -7,7 +7,7 @@ export function Philosophy() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-background">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column */}
@@ -17,7 +17,7 @@ export function Philosophy() {
             }`}
           >
             <p className="text-primary font-medium mb-4 text-sm tracking-wide uppercase">Philosophy</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-8">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6 sm:mb-8">
               Creative Work Should{" "}
               <span className="bg-gradient-to-r from-primary via-orange-500 to-amber-500 bg-clip-text text-transparent">
                 Move People
