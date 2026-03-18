@@ -13,7 +13,7 @@ export function FeaturedWork() {
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
         <div
-          className={`grid lg:grid-cols-2 gap-8 items-end mb-16 transition-all duration-700 ${
+          className={`grid lg:grid-cols-2 gap-6 sm:gap-8 items-end mb-10 sm:mb-16 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
