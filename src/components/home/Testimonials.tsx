@@ -46,7 +46,7 @@ export function Testimonials() {
             backgroundSize: '80px 80px'
           }} />
 
-          <div className="relative z-10 py-16 sm:py-20 px-6 sm:px-12">
+          <div className="relative z-10 py-10 sm:py-20 px-4 sm:px-12">
             {/* Header */}
             <div
               className={`text-center mb-16 transition-all duration-700 ${
