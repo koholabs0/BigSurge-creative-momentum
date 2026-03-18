@@ -68,7 +68,7 @@ export function Hero() {
             <div className="order-1 lg:order-2 flex flex-col items-center lg:items-end gap-8">
               {/* Profile Photo with Swap Effect */}
               <div className="relative animate-fade-up-delay-1">
-                <div className="relative w-64 h-80 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl photo-swap cursor-pointer group">
+                <div className="relative w-48 h-60 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl photo-swap cursor-pointer group">
                   <img
                     src={realPhoto}
                     alt="Adesoji Adenuga"
