@@ -11,7 +11,7 @@ export function Stats() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="py-16 bg-background">
+    <section ref={ref} className="py-10 sm:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Editorial Stats Card */}
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90">
