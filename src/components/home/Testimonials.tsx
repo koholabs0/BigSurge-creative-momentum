@@ -54,7 +54,7 @@ export function Testimonials() {
               }`}
             >
               <p className="text-white/80 font-medium mb-3 text-sm tracking-wide uppercase">Testimonials</p>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
                 What Clients Say
               </h2>
               <p className="text-lg text-white/70 max-w-xl mx-auto">
