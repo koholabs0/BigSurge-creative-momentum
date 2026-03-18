@@ -142,16 +142,14 @@ export function Hero() {
           <p className="text-muted-foreground text-sm">
             Trusted by Brands I've<br className="sm:hidden" /> Helped Shape
           </p>
-          <div className="flex items-center gap-8 sm:gap-12">
+          <div className="flex items-center gap-6 sm:gap-10">
             {brands.map((brand, index) => (
               <div 
                 key={index} 
-                className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
               >
-                <div className="w-6 h-6 rounded-full bg-foreground/10 flex items-center justify-center">
-                  <span className="text-xs font-bold">{brand[0]}</span>
-                </div>
-                <span className="font-medium text-sm hidden sm:inline">{brand}</span>
+                <img src={brand.logo} alt={brand.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
+                <span className="font-medium text-sm text-foreground hidden sm:inline">{brand.name}</span>
               </div>
             ))}
           </div>
