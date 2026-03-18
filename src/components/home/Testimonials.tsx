@@ -67,7 +67,7 @@ export function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={testimonial.id}
-                  className={`relative p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-500 ${
+                  className={`relative p-5 sm:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-500 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                   }`}
                   style={{ transitionDelay: `${(index + 1) * 100}ms` }}
