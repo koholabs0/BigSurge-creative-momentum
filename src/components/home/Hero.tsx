@@ -45,7 +45,7 @@ export function Hero() {
               </p>
 
               {/* Main Title */}
-              <h1 className="animate-fade-up-delay-1 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-8">
+              <h1 className="animate-fade-up-delay-1 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9] mb-6 sm:mb-8">
                 Creative
                 <br />
                 Director
