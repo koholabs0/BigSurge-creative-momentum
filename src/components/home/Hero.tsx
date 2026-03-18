@@ -35,8 +35,8 @@ export function Hero() {
           backgroundSize: '80px 80px'
         }} />
 
-        <div className="relative z-10 container mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
+        <div className="relative z-10 container mx-auto px-4 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[50vh] sm:min-h-[70vh]">
             {/* Left Content */}
             <div className="text-white order-2 lg:order-1">
               {/* Intro text */}
