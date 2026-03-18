@@ -3,6 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import animePhoto from "@/assets/adesoji-anime.png";
 import realPhoto from "@/assets/adesoji-photo.png";
+import sossaFestLogo from "@/assets/sossa-fest-logo.png";
+import sossaLogo from "@/assets/sossa-logo.png";
+import cartrackerLogo from "@/assets/cartracker-logo.png";
 
 const services = [
   { num: "01", label: "Content Strategy" },
@@ -12,10 +15,9 @@ const services = [
 ];
 
 const brands = [
-  "Spotify",
-  "YouTube",
-  "TikTok",
-  "Meta",
+  { name: "SOSSA Fest", logo: sossaFestLogo },
+  { name: "SOSSA", logo: sossaLogo },
+  { name: "CarTracker Nigeria", logo: cartrackerLogo },
 ];
 
 export function Hero() {
