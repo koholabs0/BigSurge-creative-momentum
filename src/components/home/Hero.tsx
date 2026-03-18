@@ -22,7 +22,7 @@ const brands = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen bg-background overflow-hidden">
+    <section className="relative min-h-[80vh] sm:min-h-screen bg-background overflow-hidden">
       {/* Main Hero Card */}
       <div className="relative mx-4 sm:mx-6 lg:mx-8 mt-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/90 via-primary/70 to-orange-600/80">
         {/* Background gradient overlay */}
