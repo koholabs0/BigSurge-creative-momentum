@@ -7,7 +7,7 @@ export function Philosophy() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <section ref={ref} className="py-16 lg:py-24 bg-background">
+    <section ref={ref} className="py-12 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column */}
