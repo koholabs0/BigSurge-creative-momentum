@@ -32,7 +32,7 @@ export default function Writing() {
     async function fetchPosts() {
       const { data } = await supabase
         .from("blog_posts")
-        .select("id, title, slug, excerpt, category, created_at, cover_image")
+        .select("id, title, slug, excerpt, category, created_at, cover_image, medium_url")
         .eq("published", true)
         .order("created_at", { ascending: false });
 
