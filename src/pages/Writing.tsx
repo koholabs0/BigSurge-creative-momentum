@@ -13,6 +13,7 @@ interface BlogPost {
   category: string;
   created_at: string;
   cover_image: string | null;
+  medium_url: string | null;
 }
 
 const categoryColors: Record<string, string> = {
@@ -31,7 +32,7 @@ export default function Writing() {
     async function fetchPosts() {
       const { data } = await supabase
         .from("blog_posts")
-        .select("id, title, slug, excerpt, category, created_at, cover_image")
+        .select("id, title, slug, excerpt, category, created_at, cover_image, medium_url")
         .eq("published", true)
         .order("created_at", { ascending: false });
 
@@ -91,63 +92,85 @@ export default function Writing() {
 
           {/* Articles Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
-              <Link
-                key={post.id}
-                to={`/writing/${post.slug}`}
-                className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover-lift transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                }`}
-                style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-              >
-                {/* Image */}
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  {post.cover_image ? (
-                    <img
-                      src={post.cover_image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-primary opacity-20">
-                      <span className="text-6xl">✍️</span>
-                    </div>
-                  )}
-                </div>
+            {filteredPosts.map((post, index) => {
+              const cardClass = `group relative overflow-hidden rounded-2xl bg-card border border-border hover-lift transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`;
+              const cardStyle = { transitionDelay: `${(index + 1) * 100}ms` };
 
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span
-                      className={`text-xs font-medium px-3 py-1 rounded-full ${
-                        categoryColors[post.category] || "bg-muted text-muted-foreground"
-                      }`}
-                    >
-                      {post.category}
-                    </span>
-                    <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Calendar className="w-3 h-3" />
-                      {new Date(post.created_at).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </span>
+              const cardContent = (
+                <>
+                  {/* Image */}
+                  <div className="aspect-[16/10] overflow-hidden bg-muted">
+                    {post.cover_image ? (
+                      <img
+                        src={post.cover_image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-primary opacity-20">
+                        <span className="text-6xl">✍️</span>
+                      </div>
+                    )}
                   </div>
-                  <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-muted-foreground text-sm line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                </div>
 
-                {/* Hover Arrow */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                  <ArrowUpRight className="w-5 h-5 text-foreground" />
-                </div>
-              </Link>
-            ))}
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span
+                        className={`text-xs font-medium px-3 py-1 rounded-full ${
+                          categoryColors[post.category] || "bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {post.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                        <Calendar className="w-3 h-3" />
+                        {new Date(post.created_at).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+                    <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                      {post.title}
+                    </h2>
+                    <p className="text-muted-foreground text-sm line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  </div>
+
+                  {/* Hover Arrow */}
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/80 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                    <ArrowUpRight className="w-5 h-5 text-foreground" />
+                  </div>
+                </>
+              );
+
+              return post.medium_url ? (
+                <a
+                  key={post.id}
+                  href={post.medium_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClass}
+                  style={cardStyle}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <Link
+                  key={post.id}
+                  to={`/writing/${post.slug}`}
+                  className={cardClass}
+                  style={cardStyle}
+                >
+                  {cardContent}
+                </Link>
+              );
+            })}
           </div>
 
           {filteredPosts.length === 0 && (
