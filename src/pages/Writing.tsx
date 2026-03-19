@@ -92,10 +92,19 @@ export default function Writing() {
 
           {/* Articles Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
-              <Link
+            {filteredPosts.map((post, index) => {
+              const isExternal = !!post.medium_url;
+              const linkProps = isExternal
+                ? { href: post.medium_url!, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              const Component = isExternal ? "a" : Link;
+              const toProps = isExternal ? {} : { to: `/writing/${post.slug}` };
+
+              return (
+              <Component
                 key={post.id}
-                to={`/writing/${post.slug}`}
+                {...toProps}
+                {...linkProps}
                 className={`group relative overflow-hidden rounded-2xl bg-card border border-border hover-lift transition-all duration-700 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
