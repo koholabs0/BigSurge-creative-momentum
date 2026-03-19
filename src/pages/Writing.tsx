@@ -13,6 +13,7 @@ interface BlogPost {
   category: string;
   created_at: string;
   cover_image: string | null;
+  medium_url: string | null;
 }
 
 const categoryColors: Record<string, string> = {
